@@ -4,6 +4,9 @@ function change_score_ () {
 function game_over () {
 	
 }
+sprites.onOverlap(SpriteKind.Player, SpriteKind.Enemy, function (sprite, otherSprite) {
+    game.over(false)
+})
 function _49ers () {
     let score = 0
     _49ers2 = sprites.create(img`
@@ -36,9 +39,6 @@ function _49ers () {
         controller.moveSprite(spaceship, 100 - 2 * info.score(), 100 - 2 * info.score())
     }
 }
-sprites.onOverlap(SpriteKind.Player, SpriteKind.Enemy, function (sprite, otherSprite) {
-    game.over(false)
-})
 let extra_velocity = 0
 let _49ers2: Sprite = null
 let spaceship: Sprite = null
